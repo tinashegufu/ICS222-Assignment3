@@ -9,6 +9,7 @@ function validate(){
     error_message.style.padding = "10px";
     
     var text;
+    var letters = /^[a-z]*$/i;
 
     if(name.length < 2){
         text="Enter more than 1 character for name";
@@ -18,8 +19,8 @@ function validate(){
 
     }
 
-    if(!isNaN(name)){
-        text="Name cannot be digits";
+    if (!name.match(letters)) {
+        text="Name cannot contain digits. Name is a text only Field";
         error_message.innerHTML = text;
         alert(text);
         return false;
