@@ -10,6 +10,13 @@ function validate(){
     
     var text;
     var letters = /^[a-z]*$/i;
+    
+    if (!name.match(letters)) {
+        text="Name cannot contain digits. Name is a text only Field";
+        error_message.innerHTML = text;
+        alert(text);
+        return false;
+    }
 
     if(name.length < 2){
         text="Enter more than 1 character for name";
@@ -17,13 +24,6 @@ function validate(){
         alert(text);
         return false;
 
-    }
-
-    if (!name.match(letters)) {
-        text="Name cannot contain digits. Name is a text only Field";
-        error_message.innerHTML = text;
-        alert(text);
-        return false;
     }
 
     if(number.length < 9){
